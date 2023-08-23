@@ -14,11 +14,29 @@ L'output del prezzo finale va stampato in forma umana (ovvero con massimo due de
 //console.log
 
 //Chiedo all'utente quanti km vuole fare
-const kmUtente = prompt ('Qaunti km vuole percorrere?');
+const kmUtente = prompt('Qaunti km vuole percorrere?');
 
 //Chiedo all'utente quanti anni ha
-const anniUtente = prompt ('Quanti anni ha?');
+const anniUtente = prompt('Quanti anni ha?');
+
+//Controllo che l'utente abbia inserito entrambe le richieste
+console.log(kmUtente , anniUtente);
 
 //Calcolo il prezzo del biglietto in base ai km da percorrere
+let calcoloPrezzo = kmUtente * 0.21
+
+console.log(calcoloPrezzo);
+
 //Applico gli sconti in base all'età del passeggiero
+let risultato; 
+
+if(anniUtente < 18) {
+    risultato = calcoloPrezzo - ((calcoloPrezzo * 20) / 100 )
+} else if(anniUtente >= 65) {
+    risultato = calcoloPrezzo - ((calcoloPrezzo * 40) / 100 )
+} else {
+    risultato = calcoloPrezzo
+}
+console.log (risultato); 
+
 //Stampo il prezzo finale 
