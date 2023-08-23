@@ -37,6 +37,11 @@ if(anniUtente < 18) {
 } else {
     risultato = calcoloPrezzo
 }
+
+//Stampo il prezzo finale in console
+risultato = risultato.toFixed(2).toString().replace('.', ',');
+
 console.log (risultato); 
 
-//Stampo il prezzo finale 
+//Stampo il prezzo finale in pagina 
+document.getElementById('prezzoStampato').innerHTML = 'Prezzo del biglietto € ' + risultato;
